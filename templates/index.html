@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Library Management System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>📚 Smart Library</h1>
+    <p>Library Management System with Voice Assistant</p>
+</header>
+
+
+<main>
+
+    <!-- VOICE ASSISTANT -->
+
+    <section class="voice-card">
+
+        <h2>🎤 Voice Assistant</h2>
+
+        <p id="voiceStatus">
+            Click the microphone and speak
+        </p>
+
+        <button id="micButton">
+            🎤 Start Speaking
+        </button>
+
+        <div id="voiceText">
+            Your voice command will appear here...
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH -->
+
+    <section class="search-card">
+
+        <h2>🔍 Search Books</h2>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Enter book title, author or category">
+
+            <button onclick="searchBooks()">
+                Search
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESPONSE -->
+
+    <section class="response-card">
+
+        <h2>Assistant Response</h2>
+
+        <p id="response">
+            Welcome to Smart Library.
+        </p>
+
+    </section>
+
+
+    <!-- BOOKS -->
+
+    <section>
+
+        <h2>📚 Books</h2>
+
+        <div id="bookContainer"
+             class="book-grid">
+
+        </div>
+
+    </section>
+
+
+    <!-- ISSUED BOOKS -->
+
+    <section>
+
+        <h2>📖 Issued Books</h2>
+
+        <button onclick="loadIssuedBooks()">
+            Show Issued Books
+        </button>
+
+        <div id="issuedContainer"></div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        Smart Library Management System
+    </p>
+
+    <p>
+        Flask • MySQL • Speech-to-Text • Text-to-Speech
+    </p>
+
+</footer>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
